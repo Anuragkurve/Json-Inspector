@@ -12,9 +12,8 @@
     }
   ],
   "rewrites": [
-    { "source": "/compare", "destination": "backend/Server.js" },
-    { "source": "/share", "destination": "backend/Server.js" },
-    { "source": "/share/(.*)", "destination": "backend/Server.js" },
-    { "source": "/(.*)", "destination": "frontend/$1" }
+    { "source": "/compare", "destination": "/backend/Server.js" },
+    { "source": "/share/(.*)", "destination": "/backend/Server.js" },
+    { "source": "/(.*)", "destination": "/frontend/$1" }
   ]
 }
