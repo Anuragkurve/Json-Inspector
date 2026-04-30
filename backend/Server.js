@@ -54,4 +54,11 @@ app.post('/compare', (req, res) => {
     }
 });
 
-app.listen(5000, () => console.log('Backend running on http://localhost:5000'));
+// On Vercel, we don't need app.listen for the production environment
+if (process.env.NODE_ENV !== 'production') {
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
+
+// CRITICAL: Export the app for Vercel
+module.exports = app;
